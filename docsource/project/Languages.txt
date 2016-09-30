@@ -6,8 +6,7 @@ Format: 1.52
 # Config directory instead.
 
 
-# You can prevent certain file extensions from being scanned like this:
-# Ignore Extensions: [extension] [extension] ...
+Ignore Extension: pl
 
 
 #-------------------------------------------------------------------------------
@@ -115,4 +114,4 @@ Format: 1.52
 
 Alter Language: SQL
 
-   Add Extensions: pkb pks
+   Add Extensions: pks tps

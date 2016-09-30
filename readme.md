@@ -1,12 +1,13 @@
 ##UTPLSQL v3
 
 A clean rewrite of utPLSQL
-Current State: Non functioning
+Current State: Pre-Alpha ( Now used by some developers internally)
 
 #Directories
 
-* build -contains scripts used by the Jenkins to build the project
-* examples - contains example unit tests.
-* source - contains the code utPLSQL
-* tests - contains the tests written to test utPLSQL
-* docsource - contains source of documentation.
+* build -Scripts used by the Jenkins to build the project
+* examples - Example unit tests.
+* source - Source Code utPLSQL
+* tests - Tests written to test utPLSQL
+* docsource - Project files and cripts to generate documentation. 
+* .travis - Scripts used by the travis CI build.
