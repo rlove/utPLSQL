@@ -44,7 +44,6 @@ Group: Documentation  {
    File: Getting Started  (docsource\topics\getting-started.txt)
    File: Annotations  (docsource\topics\annotations.txt)
    File: Support  (docsource\topics\support.txt)
-   File: Contributing  (docsource\topics\contributing.txt)
    }  # Group: Documentation
 
 Group: Source  {
@@ -52,6 +51,7 @@ Group: Source  {
    File: ut_metadata  (source\ut_metadata.pks)
    File: ut_utils  (source\ut_utils.pks)
    File: License  (source\license.txt)
+   File: Contributing  (docsource\topics\contributing.txt)
    }  # Group: Source
 
 Group: Index  {

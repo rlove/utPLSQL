@@ -3,8 +3,12 @@ use strict;
 use warnings;
 use IPC::System::Simple qw(system);
 use MarkDent::Simple::Document;
+use MarkDent::Simple::Fragment;
 use File::Map qw(map_file);
 use File::Path qw(make_path);
+
+use constant false => 0;
+use constant true  => 1;
 
 main();
 
@@ -32,7 +36,10 @@ sub main{
     system($^X, "../tools/NaturalDocs/NaturalDocs", @nd_args);
     
 	#convert markdown files to html 
-    convert_markdown("../CONTRIBUTING.md","../docs/files/docsource/topics/contributing-txt.html","How to contribute to utPLSQL");
+    #convert_markdown_file("../CONTRIBUTING.md","../docs/files/docsource/topics/contributing-txt.html","How to contribute to utPLSQL");
+	convert_markdown_and_insert("../CONTRIBUTING.md","../docs/files/docsource/topics/contributing-txt.html");
+	
+	
 	
 	#Checking for current/past errors with NaturalDocs
 	check_project_file_for_error("project/Menu.txt");		
@@ -50,18 +57,64 @@ sub check_project_file_for_error {
 }  
 
 sub convert_markdown {
+   my $markdowntext = shift;
+   my $fragment = shift;
+   my $title = shift;  
+
+   # convert markdown to html  
+   my $htmltext;
+   if ($fragment = true) {
+       my $parser = Markdent::Simple::Fragment->new();
+       $htmltext   = $parser->markdown_to_html(
+						  markdown => $markdowntext);  
+   } else {
+     my $parser = Markdent::Simple::Document->new();
+     $htmltext   = $parser->markdown_to_html(
+						  markdown => $markdowntext,
+						  title => $title);
+   }
+ 
+   #return 
+   $htmltext;						     
+}
+
+sub convert_markdown_and_insert {
+   my $source = shift;
+   my $dest = shift;   
+   
+   # memory map input file
+   map_file(my $markdown, $source);    
+   
+   # convert markdown to html
+   my $html = convert_markdown($markdown,true);
+   
+   # read output file
+   open FILE, "<$dest" or die "Couldn't open file: $!";
+   binmode FILE;
+   my $output = do { local $/; <FILE> };
+   close FILE;
+   
+   #search and replace
+   $output =~ s/$source/$html/g;
+     
+   # write output file
+   open FILE, ">$dest" or die "Couldn't open file: $!";
+   binmode FILE;
+   print FILE $output;
+   close FILE;
+   
+}
+
+sub convert_markdown_file {
    my $source = shift;
    my $dest = shift;   
    my $title = shift;  
-
+  
    # memory map input file
    map_file(my $markdown, $source);   
   
    # convert markdown to html
-   my $parser = Markdent::Simple::Document->new();
-   my $html   = $parser->markdown_to_html(
-						  title    => $title,
-						  markdown => $markdown);
+   my $html = convert_markdown($markdown,false,$title);
 
    # check output file exists, and deletes.		   
    if (-f $dest)  {
