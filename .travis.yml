@@ -41,7 +41,7 @@ cache:
 before_install:
   # perl modules needed for documenation generation
   - "cpanm IPC::System::Simple"
-  - "cpanm MarkDent"
+  - "cpanm Markdent"
 # On trusty, download the zip file into a cachable directory
   - test "$DIST" = precise || export ORACLE_ZIP_DIR=$HOME/.cache
 # If the zip file already exists, do not download it again

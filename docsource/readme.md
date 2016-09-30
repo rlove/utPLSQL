@@ -13,7 +13,7 @@ builddocs.pl
 Required Modules:
 
 - IPC::System::Simple
-- MarkDent
+- Markdent
 
 #NaturalDocs
 
