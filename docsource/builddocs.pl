@@ -2,8 +2,8 @@
 use strict;
 use warnings;
 use IPC::System::Simple qw(system);
-use MarkDent::Simple::Document;
-use MarkDent::Simple::Fragment;
+use Markdent::Simple::Document;
+use Markdent::Simple::Fragment;
 use File::Map qw(map_file);
 use File::Path qw(make_path);
 
