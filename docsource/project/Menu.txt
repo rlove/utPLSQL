@@ -1,4 +1,4 @@
-Format: 1.52
+Format: Development Release 07-07-2013 (1.52 base)
 
 
 Title: utPLSQL
@@ -40,18 +40,18 @@ Timestamp: Generated on month day, year
 
 Group: Documentation  {
 
-   File: Installation  (docsource\topics\install.txt)
-   File: Getting Started  (docsource\topics\getting-started.txt)
-   File: Annotations  (docsource\topics\annotations.txt)
-   File: Support  (docsource\topics\support.txt)
+   File: Installation  (docsource/topics/install.txt)
+   File: Getting Started  (docsource/topics/getting-started.txt)
+   File: Annotations  (docsource/topics/Annotations.txt)
+   File: Support  (docsource/topics/Support.txt)
    }  # Group: Documentation
 
 Group: Source  {
 
-   File: ut_metadata  (source\ut_metadata.pks)
-   File: ut_utils  (source\ut_utils.pks)
-   File: License  (source\license.txt)
-   File: Contributing  (docsource\topics\contributing.txt)
+   File: ut_metadata  (source/ut_metadata.pks)
+   File: ut_utils  (source/ut_utils.pks)
+   File: License  (source/license.txt)
+   File: Contributing  (docsource/topics/contributing.txt)
    }  # Group: Source
 
 Group: Index  {

@@ -33,7 +33,7 @@ sub main{
 		  -xi ../build 
 		  -r
 		  );	  
-    system($^X, "../tools/NaturalDocs/NaturalDocs", @nd_args);
+    system($^X, "../tools/naturaldocs/NaturalDocs", @nd_args);
     
 	#convert markdown files to html 
     #convert_markdown_file("../CONTRIBUTING.md","../docs/files/docsource/topics/contributing-txt.html","How to contribute to utPLSQL");

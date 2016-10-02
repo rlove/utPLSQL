@@ -2,3 +2,6 @@
 	path = lib/any_data
 	url = https://github.com/jgebal/any_data.git
 	branch = 1.0.4
+[submodule "tools/naturaldocs"]
+	path = tools/naturaldocs
+	url = https://github.com/rlove/NaturalDocs.git
