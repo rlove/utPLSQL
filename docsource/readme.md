@@ -14,6 +14,7 @@ Required Modules:
 
 - IPC::System::Simple
 - Markdent
+- File::Map
 
 #NaturalDocs
 
