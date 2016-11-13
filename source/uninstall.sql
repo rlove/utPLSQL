@@ -1,3 +1,5 @@
+drop package ut_teamcity_reporter_helper;
+
 drop package ut_suite_manager;
 
 drop package ut_assert;
@@ -76,6 +78,8 @@ drop package ut_metadata;
 
 drop package ut_utils;
 
+drop type ut_teamcity_reporter;
+
 drop type ut_dbms_output_suite_reporter;
 
 drop type ut_reporter_decorator;
@@ -92,6 +96,10 @@ drop type ut_reporters_list;
 
 drop type ut_reporter force;
 
+drop type ut_output_dbms_output;
+
+drop type ut_output;
+
 drop type ut_assert_list;
 
 drop type ut_assert_result;
@@ -103,3 +111,4 @@ drop type ut_composite_object;
 drop type ut_objects_list;
 
 drop type ut_object;
+
